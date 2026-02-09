@@ -1,0 +1,35 @@
+library(readr)
+library(dplyr)
+# Dataset 1: PhonePe State-District Data
+phonepe_raw <- read_csv("data/raw/phonepe_data.csv")
+
+# Dataset 2: UPI Monthly Enriched Data
+upi_monthly_raw <- read_csv("data/raw/upi_india_monthly_enriched.csv")
+
+# Dataset 3: RBI Monthly UPI Summary
+rbi_raw <- read_csv("data/raw/RS_Session_259_AU_1476_C_to_E.csv")
+cat("PHONEPE DATASET\n")
+dim(phonepe_raw)
+str(phonepe_raw)
+head(phonepe_raw)
+cat("\nUPI MONTHLY ENRICHED DATASET\n")
+dim(upi_monthly_raw)
+str(upi_monthly_raw)
+head(upi_monthly_raw)
+range(upi_monthly_raw$Date)
+cat("\nRBI MONTHLY DATASET\n")
+dim(rbi_raw)
+str(rbi_raw)
+head(rbi_raw)
+colSums(is.na(phonepe_raw))
+colSums(is.na(upi_monthly_raw))
+colSums(is.na(rbi_raw))
+summary(phonepe_raw$transaction_volume)
+summary(phonepe_raw$transaction_amount)
+summary(upi_monthly_raw$Volume_Mn)
+summary(upi_monthly_raw$Value_Cr)
+# DATASET ROLES IN PROJECT:
+# 1. PhonePe dataset -> State-wise UPI adoption confirmation
+# 2. UPI Monthly Enriched dataset -> Time-series analysis & regression modeling
+# 3. RBI dataset -> Validation and trend verification
+rm(list = ls())
