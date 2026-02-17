@@ -54,19 +54,3 @@ summary(phonepe_raw$transaction_amount)
 
 summary(upi_monthly_raw$Volume_Mn)
 summary(upi_monthly_raw$Value_Cr)
-
-
-# -------------------------------
-# DATASET ROLE NOTES
-# -------------------------------
-
-# 1. PhonePe dataset -> State-wise UPI adoption confirmation
-# 2. UPI Monthly Enriched dataset -> Time-series analysis & regression modeling
-# 3. RBI dataset -> Validation and trend verification
-
-
-# -------------------------------
-# CLEAN ENVIRONMENT (OPTIONAL)
-# -------------------------------
-
-# rm(list = ls())
